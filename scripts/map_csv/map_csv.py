@@ -17,8 +17,8 @@ def generate_object(course: str):
 
 
 def read_data(file_path: str):
-    with open(file_path, 'r', encoding='utf-8-sig') as csv_file:
-        return "[{}\n]\n".format(",".join("\n{}".format(generate_object(line.strip())) for line in csv_file))
+    with open(file_path, 'r', encoding='utf-8-sig') as csv:
+        return "[{}\n]\n".format(",".join("\n{}".format(generate_object(line.strip())) for line in csv if line.strip()))
 
 
 def write_result(result: str, file_path: str):
